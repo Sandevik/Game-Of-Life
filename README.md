@@ -1,5 +1,6 @@
 # Game-Of-Life
 Terminal Game of life program built in Rust
+in 233 lines of code
 
 ## The Rules of Game Of Life;
 ### https://en.wikipedia.org/wiki/Conway%27s_Game_of_Life

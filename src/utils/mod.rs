@@ -1,6 +1,7 @@
 use self::point::Point;
 pub mod board;
 pub mod point;
+pub mod shapes;
 
 pub type Matrix = Vec<Row>;
 pub type Row = Vec<Point>;

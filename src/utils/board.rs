@@ -1,6 +1,6 @@
 use tokio::time::{sleep_until, Instant, Duration};
 
-use super::{Matrix, Row, point::Point, Coordinates};
+use super::{Matrix, Row, point::Point, Coordinates, shapes::Shape};
 
 #[derive(Debug, Clone)]
 pub struct Board {
@@ -112,4 +112,9 @@ impl Board {
         }
         all_dead
     }
+
+    pub fn add_shape(&mut self, shape: Shape) -> () {
+        shape.iter().for_each(|coord| self.toggle_point_life(coord.clone()))
+    }
+
 }

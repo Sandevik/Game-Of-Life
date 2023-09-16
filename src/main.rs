@@ -1,5 +1,5 @@
 mod utils;
-use utils::board::*;
+use utils::{board::*, shapes::Shapes};
 
 use crate::utils::Coordinates;
 
@@ -8,26 +8,14 @@ async fn main() {
     let mut board: Board = Board::new(16);
     
     //Blinker
-    board.toggle_point_life(Coordinates::new(1, 0));
-    board.toggle_point_life(Coordinates::new(1, 1));
-    board.toggle_point_life(Coordinates::new(1, 2));
+    board.add_shape(Shapes::blinker(Coordinates { x: 0, y: 0 }));
     
     //Beacon
-    board.toggle_point_life(Coordinates::new(4, 4)); 
-    board.toggle_point_life(Coordinates::new(5, 4));  
-    board.toggle_point_life(Coordinates::new(4, 5));
-    board.toggle_point_life(Coordinates::new(5, 5));
-    board.toggle_point_life(Coordinates::new(6, 6));  
-    board.toggle_point_life(Coordinates::new(7, 6));  
-    board.toggle_point_life(Coordinates::new(6, 7));
-    board.toggle_point_life(Coordinates::new(7, 7));
+    board.add_shape(Shapes::beacon(Coordinates {x:6, y:4}));
     
     //space ship
-    board.toggle_point_life(Coordinates::new(7, 10));
-    board.toggle_point_life(Coordinates::new(8, 11));
-    board.toggle_point_life(Coordinates::new(8, 12));
-    board.toggle_point_life(Coordinates::new(7, 12));
-    board.toggle_point_life(Coordinates::new(6, 12));
+    board.add_shape(Shapes::space_ship(Coordinates { x: 5, y: 10 }));
+
 
     board.start().await;
 }

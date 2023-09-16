@@ -5,7 +5,6 @@ use crate::utils::Coordinates;
 
 #[tokio::main]
 async fn main() {
-
     let mut board: Board = Board::new(16);
     
     //Blinker
@@ -30,10 +29,7 @@ async fn main() {
     board.toggle_point_life(Coordinates::new(7, 12));
     board.toggle_point_life(Coordinates::new(6, 12));
 
-
-
     board.start().await;
-    
 }
 
 

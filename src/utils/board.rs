@@ -38,8 +38,7 @@ impl Board {
             self.show();
             sleep_until(Instant::now() + Duration::from_millis(1000)).await;
             //if self.check_all_dead() {break;}
-            self.next_round();
-            
+            self.next_round(); 
         }
     }
 
@@ -84,12 +83,10 @@ impl Board {
                 } else {
                     if x == self.size - 1 {
                         string.push_str(" |")
-
                     } else {
                         string.push_str("  ")
                     }
-                }
-                
+                }   
             }
             string.push('\n');
         }
@@ -98,7 +95,7 @@ impl Board {
             string.push_str("__")
         }
         string.push_str("_\n");
-        
+
         println!("{string}");
 
     }
@@ -115,7 +112,4 @@ impl Board {
         }
         all_dead
     }
-    
-
-
 }

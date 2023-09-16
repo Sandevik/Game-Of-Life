@@ -1,5 +1,5 @@
 # Game-Of-Life
-Game of life program built in Rust
+Terminal Game of life program built in Rust
 
 ## The Rules of Game Of Life;
 ### https://en.wikipedia.org/wiki/Conway%27s_Game_of_Life
